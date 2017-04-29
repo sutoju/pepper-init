@@ -1,0 +1,10 @@
+from naoqi import ALProxy
+tts = ALProxy("ALAnimatedSpeech", "192.168.1.19", 9559)
+speaker = ALProxy("ALTextToSpeech", "192.168.1.19", 9559)
+speaker.setLanguage("English")
+tts.setBodyLanguageMode(2)
+pr = ALProxy("ALAutonomousMoves", "192.168.1.19", 9559)
+pr.setBackgroundStrategy('none')
+postureProxy = ALProxy("ALRobotPosture", "192.168.1.19", 9559)
+postureProxy.goToPosture("Stand", 1.0)
+tts.say("Value for life")
